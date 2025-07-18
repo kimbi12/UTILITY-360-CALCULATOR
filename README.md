@@ -11,13 +11,13 @@ A multi-functional web app featuring:
 ## 📸 Screenshots
 
 ### 🧮 Scientific Calculator
-(calculator-screenshot.png)
+![Scientific Calculator](screenshot-scientific.png)
 
 ### ⚖ BMI Calculator
-(BMI-Screenshot.png)
+![BMI Calculator](screenshot-bmi.png)
 
 ### 💱 Currency Converter
-(currency-screenshoot.png)
+![Currency Converter](screenshot-currency.png)
 
 
 ## 🚀 Live Demo
