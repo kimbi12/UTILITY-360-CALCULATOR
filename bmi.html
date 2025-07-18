@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="mc.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Menu Bar -->
+    <nav class="menu-bar">
+      <ul class="menu-list">
+        <li><a href="mordern-calculator.html">Calculator</a></li>
+        <li><a href="unit-converter.html">Unit Converter</a></li>
+        <li><a href="currency-converter.html">Currency Converter</a></li>
+        <li>
+       <li><a href="#">Upcoming Feature</a></li>
+       </ul>
+        </li>
+      </ul>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </nav>
+
+    <script>
+      function toggleMenu() {
+        const menuList = document.querySelector(".menu-list");
+        menuList.classList.toggle("show");
+      }
+    </script>
+
+    <div class="bmi-calculator">
+      <h1>BMI Calculator</h1>
+      <label for="age">Age:</label>
+      <input type="number" id="age" placeholder="Enter your age" />
+      <label for="height">Height:</label>
+      <input type="number" id="height" placeholder="Enter your height" />
+      <select id="height-unit">
+        <option value="cm">cm</option>
+        <option value="m">m</option>
+      </select>
+      <label for="weight">Mass:</label>
+      <input type="number" id="weight" placeholder="Enter your weight" />
+      <select id="weight-unit">
+        <option value="kg">kg</option>
+        <option value="lbs">pounds</option>
+      </select>
+      <button onclick="calculateBMI()">Calculate BMI</button>
+      <div class="result" id="result">Your BMI result</div>
+    </div>
+    <div class="modal" id="bmiModal">
+      <div class="modal-content">
+        <h2>BMI Result</h2>
+        <p id="modal-text"></p>
+        <button class="close-modal" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+    <script>
+      function calculateBMI() {
+        const age = parseInt(document.getElementById("age").value);
+        const height = parseFloat(document.getElementById("height").value);
+        const heightUnit = document.getElementById("height-unit").value;
+        const weight = parseFloat(document.getElementById("weight").value);
+        const weightUnit = document.getElementById("weight-unit").value;
+
+        if (
+          isNaN(age) ||
+          age <= 0 ||
+          isNaN(height) ||
+          height <= 0 ||
+          isNaN(weight) ||
+          weight <= 0
+        ) {
+          alert("Please enter valid age, height, and weight!");
+          return;
+        }
+
+        const heightInMeters = heightUnit === "cm" ? height / 100 : height;
+        const weightInKg = weightUnit === "lbs" ? weight / 2.205 : weight;
+        const bmi = (weightInKg / (heightInMeters * heightInMeters)).toFixed(2);
+
+        let category = "";
+        let recommendation = "";
+        let bodyClass = "";
+
+        if (bmi < 18.5) {
+          category = "Underweight";
+          recommendation =
+            "Consider increasing your caloric intake with nutrient-rich foods.";
+          bodyClass = "underweight";
+        } else if (bmi >= 18.5 && bmi < 24.9) {
+          category = "Normal weight";
+          recommendation = "Maintain your current lifestyle and balanced diet.";
+          bodyClass = "normal";
+        } else if (bmi >= 25 && bmi < 29.9) {
+          category = "Overweight";
+          recommendation =
+            "Incorporate regular exercise and monitor your diet.";
+          bodyClass = "overweight";
+        } else if (bmi >= 30 && bmi < 34.9) {
+          category = "Obese Class 1";
+          recommendation =
+            "Consult with a healthcare provider for a tailored health plan.";
+          bodyClass = "obese1";
+        } else if (bmi >= 35 && bmi < 39.9) {
+          category = "Obese Class 2";
+          recommendation =
+            "Seek professional advice to address your health concerns.";
+          bodyClass = "obese2";
+        } else {
+          category = "Obese Class 3";
+          recommendation =
+            "Work closely with medical professionals to manage your weight.";
+          bodyClass = "obese3";
+        }
+
+        document.body.className = bodyClass;
+
+        const modal = document.getElementById("bmiModal");
+        const modalText = document.getElementById("modal-text");
+        modalText.innerHTML = `Your BMI is <strong>${bmi}</strong> (${category}). ${recommendation}`;
+        modal.style.display = "flex";
+      }
+
+      function closeModal() {
+        const modal = document.getElementById("bmiModal");
+        modal.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
+

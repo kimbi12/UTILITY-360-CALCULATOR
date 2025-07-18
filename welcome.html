@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Animation</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Arial", sans-serif;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+      background-image: url('Zz.jpg');
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    h1 {
+      
+      font-size: 4rem;
+      font-weight: bold;
+      color:coral ;
+      text-shadow:black;
+      animation: fadeIn 7s ease-in-out;
+    }
+    
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      padding: 20px;
+    }
+
+    button {
+      color: #fff;
+      background-color: #5956f0;
+      border: none;
+      width: 180px;
+      height: 50px;
+      font-size: 25px;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-radius: 25px;
+      cursor: pointer;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.1s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #003d9e;
+      transform: translateY(-5px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .next-container {
+      margin-top: 100px;
+    }
+
+    marquee {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #3a37f7;
+      padding: 20px 0;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+     to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 50px;
+      }
+
+      button {
+        width: 150px;
+        height: 150px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <marquee behavior="alternate" direction="left"><h1>WELCOME TO UTILITY HUB 360</h1></marquee>
+    <div class="next-container">
+      <a href="mordern-calculator.html">
+        <button>Next</button>
+     </a>
+    </div>
+  </div>
+  <script>
+    function nextPage() {
+      alert("Proceeding to the next page!");
+      // Uncomment to navigate: window.location.href = "nextPage.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+       body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: rgb(60, 114, 231);
+            color: white;
+            transition: background 0.5s ease;
+        }
+        body.underweight {
+            background: linear-gradient(135deg, #87ceeb, #1e90ff);
+        }
+        body.normal {
+            background: linear-gradient(135deg, #98fb98, #32cd32);
+        }
+        body.overweight {
+            background: linear-gradient(135deg, #ffa07a, #ff4500);
+        }
+        body.obese1 {
+            background: linear-gradient(135deg, #ff8c00, #ff6347);
+        }
+        body.obese2 {
+            background: linear-gradient(135deg, #ff6347, #b22222);
+        }
+        body.obese3 {
+            background: linear-gradient(135deg, #8b0000, #ff0000);
+        }
+        .bmi-calculator {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            color: #051e72;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        input, select {
+            width: 95%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            background: rgba(247, 244, 244, 0.973);
+            color: rgb(8, 14, 1);
+            outline: none;
+        }
+        select{
+            width: 100%;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            font-size: 16px;
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #008c9e;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 16px;
+            text-align: center;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: #ffffff;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            width: 80%;
+            text-align: center;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content h2 {
+            margin-bottom: 10px;
+            color: #00bcd4;
+        }
+
+        .modal-content p {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .close-modal {
+            padding: 10px 20px;
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .modal-content {
+            background: #ffffff;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            width: 80%;
+            text-align: center;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        .modal-content h2 {
+            margin-bottom: 10px;
+            color: #00bcd4;
+        }
+        .modal-content p {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .close-modal {
+            padding: 10px 20px;
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .close-modal:hover {
+            background-color: #008c9e;
+        }
+    
+
